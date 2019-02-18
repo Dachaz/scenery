@@ -1,0 +1,48 @@
+{
+    "id": 107,
+    "url": "http://www.tvmaze.com/shows/107/bobs-burgers",
+    "name": "Bob's Burgers",
+    "type": "Animation",
+    "language": "English",
+    "genres": ["Comedy"],
+    "_embedded": {
+        "episodes": [
+            {
+                "id": 7415,
+                "url": "http://www.tvmaze.com/episodes/7415/bobs-burgers-1x01-human-flesh",
+                "name": "Human Flesh",
+                "season": 1,
+                "number": 1,
+                "airdate": "2011-01-09",
+                "airtime": "20:30",
+                "airstamp": "2011-01-10T01:30:00+00:00",
+                "runtime": 30,
+                "image": null,
+                "summary": "<p>In the series premiere episode, Bob rallies the team to cook up some business, so he sends middle child Gene to push samples in the streets, eldest daughter Tina to work the grill and youngest daughter Louise to staff the counter. The day takes an unexpected turn when the health inspector pays a visit because of a little rumor Louise started during \"show and tell\" at school.</p>",
+                "_links": {
+                    "self": {
+                        "href": "http://api.tvmaze.com/episodes/7415"
+                    }
+                }
+            },
+            {
+                "id": 7448,
+                "url": "http://www.tvmaze.com/episodes/7448/bobs-burgers-3x12-broadcast-wagstaff-school-news",
+                "name": "Broadcast Wagstaff School News",
+                "season": 3,
+                "number": 12,
+                "airdate": "2013-01-27",
+                "airtime": "20:30",
+                "airstamp": "2013-01-28T01:30:00+00:00",
+                "runtime": 30,
+                "image": null,
+                "summary": "<p>There is a \"Mad Pooper\" running wild at the Belcher children's middle school and Tina finds herself on a mission to get to the \"bottom\" of the situation.</p>",
+                "_links": {
+                    "self": {
+                        "href": "http://api.tvmaze.com/episodes/7448"
+                    }
+                }
+            }
+        ]
+    }
+}

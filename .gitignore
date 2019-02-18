@@ -1,0 +1,11 @@
+.DS_Store
+__MACOSX
+.vscode
+.coverage
+.pytest_cache
+target/*
+*.pyc
+test/test-files
+
+# WDC proprietary binary, see README.md
+mksapkg*

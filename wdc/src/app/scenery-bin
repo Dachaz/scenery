@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+import scenery
+
+if __name__ == '__main__':
+    scenery.main()

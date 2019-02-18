@@ -1,0 +1,20 @@
+Package: scenery
+Section: Apps
+Version: 1.0.0
+Packager: Dachaz
+Email: dachaz@dachaz.net
+Homepage: https://github.com/dachaz/scenery
+Description: A pattern-based scene release renamer (command line only)
+AddonShowName: Scenery
+Icon: scenery.png
+AddonIndexPage:
+AddonUsedPort:
+InstDepend:
+InstConflict:
+StartDepend:
+StartConflict:
+CenterType:
+UserControl:
+MinFWVer:
+MaxFWVer:
+IndividualFlag:
