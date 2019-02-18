@@ -1,6 +1,10 @@
-<span style="display:block;text-align:center">![Scenery.app icon](https://apps.dachaz.net/IMG/scenery/Scenery.png)</span>
+![Scenery.app icon](https://apps.dachaz.net/IMG/scenery/Scenery.png)
 
 # Scenery
+
+[![Build Status](https://travis-ci.org/Dachaz/scenery.svg?branch=master)](https://travis-ci.org/Dachaz/scenery)
+[![Coverage Status](https://coveralls.io/repos/github/Dachaz/scenery/badge.svg?branch=master)](https://coveralls.io/github/Dachaz/scenery?branch=master)
+[![PyPI version](https://badge.fury.io/py/scenery.svg)](https://badge.fury.io/py/scenery)
 
 A command-line tool that automates renaming of so-called "Scene Release" files by fetching episode names (from TVMaze) and which uses pattern-based generic building blocks (show name, season number, episode number, episode title) to format the output.
 
