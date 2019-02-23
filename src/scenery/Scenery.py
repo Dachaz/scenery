@@ -23,14 +23,15 @@ class Scenery():
             # Do the actual renaming
             self.__renameFile(sceneFile)
 
-    def __listFiles(self, path):
+    @classmethod
+    def __listFiles(cls, path):
         sceneFiles = []
         if os.path.isfile(path):
             (root, fileName) = os.path.split(path)
             sceneFile = SceneFile(fileName, root)
             sceneFiles.append(sceneFile)
         else:
-            for root, dirs, files in os.walk(path):
+            for root, _, files in os.walk(path):
                 for fileName in sorted(files):
                     sceneFile = SceneFile(fileName, root)
                     sceneFiles.append(sceneFile)

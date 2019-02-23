@@ -7,7 +7,8 @@ class SceneFileMetadataCache:
 
     # Minimum sanitation to have different spellings point to the same cache
     # (e.g. "bobs burgers" and "Bob's Burgers")
-    def getShowKey(self, showName):
+    @classmethod
+    def getShowKey(cls, showName):
         return re.sub('[^a-z0-9]', '', showName.lower())
 
     def hasShow(self, showName):

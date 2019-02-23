@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/Dachaz/scenery.svg?branch=master)](https://travis-ci.org/Dachaz/scenery)
 [![Coverage Status](https://coveralls.io/repos/github/Dachaz/scenery/badge.svg?branch=master)](https://coveralls.io/github/Dachaz/scenery?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/33d64d7332654e348c31498c954ba3a9)](https://www.codacy.com/app/Dachaz/scenery?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Dachaz/scenery&amp;utm_campaign=Badge_Grade)
 [![PyPI version](https://badge.fury.io/py/scenery.svg)](https://badge.fury.io/py/scenery)
 
 A command-line tool that automates renaming of so-called "Scene Release" files by fetching episode names (from TVMaze) and which uses pattern-based generic building blocks (show name, season number, episode number, episode title) to format the output.
@@ -12,9 +13,9 @@ Essentially, a Python-based port of [Scenery.app](http://apps.dachaz.net/scenery
 
 The intended goal of this port is to be compatible with more platforms, including NASes. (e.g. **WD My Cloud Mirror Gen 2**).
 
-# Installation
+## Installation
 
-## Using pip (cross-platform)
+### Using pip (cross-platform)
 
 Almost all systems running Python have [pip](https://pip.pypa.io/). On those systems, installation is as easy as:
 
@@ -22,19 +23,19 @@ Almost all systems running Python have [pip](https://pip.pypa.io/). On those sys
 pip install scenery
 ```
 
-## On WD My Cloud Mirror Gen 2
+### On WD My Cloud Mirror Gen 2
 
-1. Download a precompiled binary from the releases page (e.g. `WDMyCloudMirrorGen2_scenery_1.0.0.bin(18022019)`)
-1. Log into the _WD My Cloud Mirror_ admin interface of your device
-1. Click "Apps"
-1. Click "Install an app manually"
-1. Choose the binary you downloaded previously
-1. Wait for the confirmation
+1.  Download a precompiled binary from the releases page (e.g. `WDMyCloudMirrorGen2_scenery_1.0.0.bin(18022019)`)
+2.  Log into the _WD My Cloud Mirror_ admin interface of your device
+3.  Click "Apps"
+4.  Click "Install an app manually"
+5.  Choose the binary you downloaded previously
+6.  Wait for the confirmation
 
 ⚠️ This will only install the command-line utility. You'll still have to ssh into the device to use it!
 
-# Usage
-```
+## Usage
+```bash
 usage: scenery [-h] [-p PATTERN] [-s] [-e] [-o] [-d] [-v] [-f] path
 
 positional arguments:
@@ -60,16 +61,16 @@ optional arguments:
                         resolved
 ```
 
-# Developer notes
+## Developer notes
 
 The project has been implemented in Python 2 to be compatible with a fairly outdated NAS that is running it.
 
 For the main part of the codebase, [PyBuilder](http://pybuilder.github.io) is used to do analysis (flake8, coverage), run the tests tests and bundle the package.
 
 ```bash
-$ git clone https://github.com/dachaz/scenery
-$ cd scenery
-$ pyb
+git clone https://github.com/dachaz/scenery
+cd scenery
+pyb
 ```
 
 The NAS-specific part of the codebase is in the `wdc` folder.
@@ -77,11 +78,11 @@ The NAS-specific part of the codebase is in the `wdc` folder.
 To compile a binary that My Cloud OS3-based NAS will want to install, it needs to be packaged with `mksapkg`. Since this is a proprietary WD binary, I'm not allowed to include it in the codebase. Furthermore, `mksapkg` has a bunch of platform-specific dependencies that my machine didn't meet, so I bundled all of them in a Docker image, including a step that downloads `mksapkg` from WDC. Thus, to build a binary of `scenery` that will run on your NAS, you just need to have Docker running and run:
 
 ```bash
-$ ./wdc/build.sh
+./wdc/build.sh
 ```
 
 To understand the full building process of a My Cloud OS3 binary, please refer to [My Cloud OS3 SDK](https://developer.westerndigital.com/develop/wd/sdk.html).
 
-# License
+## License
 
 Copyright © 2019 Dachaz. This software is licensed under the **MIT License**.

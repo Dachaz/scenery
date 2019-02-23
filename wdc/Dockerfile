@@ -1,4 +1,4 @@
-FROM fedora:latest
+FROM fedora:29
 
 RUN yum -y install \
     glibc.i686 \
@@ -18,7 +18,7 @@ RUN curl https://developer.westerndigital.com/content/dam/developer-portal/exter
 
 WORKDIR /usr/src/scenery
 
-ADD ./src /usr/src/scenery
+COPY ./src /usr/src/scenery
 
 ENTRYPOINT chmod +x /usr/src/scenery/*.sh && \
     chmod +x /usr/src/scenery/app/scenery-bin && \

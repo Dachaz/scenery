@@ -24,7 +24,7 @@ default_task = ["install_dependencies", "analyze", "publish"]
 
 @init
 def initialize(project):
-    project.build_depends_on("mockito")
+    project.build_depends_on('mockito')
 
     project.set_property('dir_source_main_python', 'src')
     project.set_property('dir_source_unittest_python', 'test')
@@ -33,8 +33,9 @@ def initialize(project):
     project.set_property('flake8_include_test_sources', True)
     project.set_property('flake8_include_scripts', True)
 
-    project.get_property('coverage_exceptions').append('scenery.__main__')  # From pyb
-    project.get_property('coverage_exceptions').append('scenery')  # just __init__, relevant tests are in Scenery_tests.py
+    # relevant tests are in Scenery_tests.py
+    project.get_property('coverage_exceptions').append('scenery.__main__')
+    project.get_property('coverage_exceptions').append('scenery')
 
     project.set_property('distutils_console_scripts', ['scenery = scenery:main'])
     project.set_property('distutils_classifiers', [

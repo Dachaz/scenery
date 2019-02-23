@@ -35,7 +35,7 @@ class SceneryTests(unittest.TestCase):
 
     def getTargetFiles(self):
         targetFiles = []
-        for root, dirs, files in os.walk(self.WORK_DIR):
+        for root, _, files in os.walk(self.WORK_DIR):
             for fileName in sorted(files):
                 targetFiles.append(os.path.join(root, fileName))
         return targetFiles

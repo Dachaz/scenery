@@ -5,10 +5,11 @@ python:
   - '2.7'
 
 install:
-  - pip install coveralls pybuilder
+  - pip install coveralls pybuilder codacy-coverage
 
 script:
   - pyb
 
 after_success:
   - coveralls --verbose
+  - python-codacy-coverage -r ./target/reports/coverage.xml
