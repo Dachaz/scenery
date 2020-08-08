@@ -1,6 +1,7 @@
 import json
 import logging
-import urllib2
+import six
+from six.moves.urllib.parse import quote
 from scenery.model.SceneFileMetadata import SceneFileMetadata
 from scenery.model.SceneFileMetadataCache import SceneFileMetadataCache
 
@@ -13,14 +14,18 @@ def getTitle(meta):
     return cache.getTitle(meta)
 
 
+def buildUrl(showName):
+    return TVMAZE_SEARCH_URL + quote(showName)
+
+
 def fetchEpisodes(showName):
     # Make sure to fetch from TVMaze only once per application run
     if cache.hasShow(showName):
         return
 
     try:
-        url = TVMAZE_SEARCH_URL + showName
-        response = urllib2.urlopen(url)
+        url = buildUrl(showName)
+        response = six.moves.urllib.request.urlopen(url)  # nosec The URL is guaranteed to be safe by buildUrl
         data = json.loads(response.read())
 
         # If the server decided to return no episode data, mark the show as unknown

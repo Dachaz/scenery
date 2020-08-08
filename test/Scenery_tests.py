@@ -12,6 +12,9 @@ class SceneryTests(unittest.TestCase):
     WORK_DIR = os.path.join(tempfile.gettempdir(), 'scenery-test-files')
     TEST_ROOT = os.path.dirname(__file__)
 
+    # assertItemsEqual got renamed to assertCountEqual in py3
+    assertItemsEqual = unittest.TestCase.assertItemsEqual if hasattr(unittest.TestCase, 'assertItemsEqual') else unittest.TestCase.assertCountEqual
+
     def setUp(self):
         # In case an earlier run ended abruptly, clean up
         if os.path.exists(self.WORK_DIR):

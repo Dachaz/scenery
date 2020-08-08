@@ -47,7 +47,7 @@ def generateFilename(sceneFile, pattern, zeroesSeason=False, zeroesEpisodes=Fals
     }
 
     out = pattern
-    for symbol, replacement in replacements.iteritems():
+    for symbol, replacement in replacements.items():
         out = out.replace(symbol, replacement)
 
     return out + extension

@@ -3,8 +3,8 @@
 # Scenery
 
 [![Build Status](https://travis-ci.org/Dachaz/scenery.svg?branch=master)](https://travis-ci.org/Dachaz/scenery)
-[![Coverage Status](https://coveralls.io/repos/github/Dachaz/scenery/badge.svg?branch=master)](https://coveralls.io/github/Dachaz/scenery?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/33d64d7332654e348c31498c954ba3a9)](https://www.codacy.com/app/Dachaz/scenery?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Dachaz/scenery&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/Dachaz/scenery/branch/master/graph/badge.svg)](https://codecov.io/gh/Dachaz/scenery)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/33d64d7332654e348c31498c954ba3a9)](https://www.codacy.com/app/Dachaz/scenery?utm_source=github.com&utm_medium=referral&utm_content=Dachaz/scenery&utm_campaign=Badge_Grade)
 [![PyPI version](https://badge.fury.io/py/scenery.svg)](https://badge.fury.io/py/scenery)
 
 A command-line tool that automates renaming of so-called "Scene Release" files by fetching episode names (from TVMaze) and which uses pattern-based generic building blocks (show name, season number, episode number, episode title) to format the output.
@@ -35,6 +35,7 @@ pip install scenery
 ⚠️ This will only install the command-line utility. You'll still have to ssh into the device to use it!
 
 ## Usage
+
 ```bash
 usage: scenery [-h] [-p PATTERN] [-s] [-e] [-o] [-d] [-v] [-f] path
 
@@ -63,7 +64,7 @@ optional arguments:
 
 ## Developer notes
 
-The project has been implemented in Python 2 to be compatible with a fairly outdated NAS that is running it.
+The project has been implemented in Python 2 to be compatible with a fairly outdated NAS that is running it. Minimum effort has been done to make this project run on Python 3 (using [six](https://six.readthedocs.io)).
 
 For the main part of the codebase, [PyBuilder](http://pybuilder.github.io) is used to do analysis (flake8, coverage), run the tests tests and bundle the package.
 
@@ -85,4 +86,4 @@ To understand the full building process of a My Cloud OS3 binary, please refer t
 
 ## License
 
-Copyright © 2019 Dachaz. This software is licensed under the **MIT License**.
+Copyright © 2019-2020 Dachaz. This software is licensed under the **MIT License**.

@@ -1,9 +1,9 @@
 from mockito import when, mock, unstub, verify, ANY, ARGS
-from scenery.TitleFetcher import getTitle, fetchEpisodes, TVMAZE_SEARCH_URL, cache
+from scenery.TitleFetcher import getTitle, fetchEpisodes, buildUrl, cache
 from scenery.model.SceneFileMetadata import SceneFileMetadata
 import logging
 import unittest
-import urllib2
+import six
 import os
 
 
@@ -18,19 +18,19 @@ class TitleFetcherTest(unittest.TestCase):
         bobData = open(os.path.join(testRoot, 'test-assets', '107.json')).read()
         self.bobResponse = mock()
         when(self.bobResponse).read().thenReturn(bobData)
-        bobUrl1 = TVMAZE_SEARCH_URL + 'Bobs Burgers'
-        bobUrl2 = TVMAZE_SEARCH_URL + "Bob's Burgers"
-        when(urllib2).urlopen(bobUrl1).thenReturn(self.bobResponse)
-        when(urllib2).urlopen(bobUrl2).thenReturn(self.bobResponse)
+        bobUrl1 = buildUrl('Bobs Burgers')
+        bobUrl2 = buildUrl("Bob's Burgers")
+        when(six.moves.urllib.request).urlopen(bobUrl1).thenReturn(self.bobResponse)
+        when(six.moves.urllib.request).urlopen(bobUrl2).thenReturn(self.bobResponse)
 
         # Mock 2: The endpoint returns only show info
         xfData = open(os.path.join(testRoot, 'test-assets', '430.json')).read()
         self.xfResponse = mock()
         when(self.xfResponse).read().thenReturn(xfData)
-        xfUrl1 = TVMAZE_SEARCH_URL + 'The X-Files'
-        xfUrl2 = TVMAZE_SEARCH_URL + 'The X Files'
-        when(urllib2).urlopen(xfUrl1).thenReturn(self.xfResponse)
-        when(urllib2).urlopen(xfUrl2).thenReturn(self.xfResponse)
+        xfUrl1 = buildUrl('The X-Files')
+        xfUrl2 = buildUrl('The X Files')
+        when(six.moves.urllib.request).urlopen(xfUrl1).thenReturn(self.xfResponse)
+        when(six.moves.urllib.request).urlopen(xfUrl2).thenReturn(self.xfResponse)
 
     def test_only_one_request_is_sent_to_server_for_shows_with_similar_names(self):
         fetchEpisodes('Bobs Burgers')

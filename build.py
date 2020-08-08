@@ -16,8 +16,8 @@ files by fetching episode names (from TVMaze) and which uses pattern-based gener
 blocks (show name, season number, episode number, episode title) to format the output.
 """
 url = 'https://github.com/dachaz/scenery'
-version = '1.0.0'
-equires_python = "=2.7"
+version = '1.0.1'
+requires_python = ">=2.7"
 
 default_task = ["install_dependencies", "analyze", "publish"]
 
@@ -42,6 +42,8 @@ def initialize(project):
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.7',
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
         'Intended Audience :: End Users/Desktop',

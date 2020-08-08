@@ -3,6 +3,7 @@ __MACOSX
 .vscode
 .coverage
 .pytest_cache
+.pybuilder
 target/*
 *.pyc
 test/test-files
